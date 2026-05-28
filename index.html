@@ -1,241 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Arms Foundation</title>
-   <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Arms Foundation</title>
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            background-color: #681f8f;
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-            animation: fadeIn 1s ease-in;
-        }
+<style>
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+body {
+    background:#f6f7fb;
+    color:#1f2937;
+}
 
-        header h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+/* HEADER */
+header {
+    background:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:1000;
+}
 
-        nav {
-            margin: 20px 0;
-        }
+header h2 {
+    color:#6a1b9a;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
+nav a {
+    margin:0 12px;
+    text-decoration:none;
+    color:#374151;
+    font-weight:500;
+}
 
-        nav a:hover {
-            color: #ffcc00; /* Highlight color on hover */
-        }
+/* HERO */
+.hero {
+    height:70vh;
+    background:linear-gradient(135deg,#6a1b9a,#8e24aa);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
 
-        .section {
-            padding: 60px 0;
-            animation: slideIn 0.5s ease-in-out;
-        }
+.hero h1 {
+    font-size:50px;
+}
 
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+.hero p {
+    margin-top:10px;
+    opacity:0.9;
+}
 
-        .mission-vision {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+.btn {
+    margin-top:20px;
+    padding:12px 25px;
+    background:white;
+    color:#6a1b9a;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+}
 
-        .mission-vision h2 {
-            color: #681f8f;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-        }
+/* SECTION */
+.section {
+    padding:80px 10%;
+}
 
-        .donation-form, .volunteer-form {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            max-width: 500px;
-        }
+/* CARD */
+.card {
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
 
-        .donation-form h2, .volunteer-form h2 {
-            color: #681f8f;
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 2em;
-        }
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
 
-        .donation-form input, .donation-form textarea, .volunteer-form input, .volunteer-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
+/* IMPACT IMAGES */
+.grid img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.3s;
+}
 
-        .donation-form input:focus, .volunteer-form input:focus,
-        .donation-form textarea:focus, .volunteer-form textarea:focus {
-            border-color: #681f8f; /* Change border color on focus */
-            outline: none; /* Remove default outline */
-        }
+.grid img:hover {
+    transform:scale(1.03);
+}
 
-        .donation-form button, .volunteer-form button {
-            background-color: #681f8f;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            width: 100%;
- }
+/* COUNTER */
+.counter {
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+}
 
-        .donation-form button:hover, .volunteer-form button:hover {
-            background-color: #551a8b;
-        }
+.counter h2 {
+    font-size:40px;
+    color:#6a1b9a;
+}
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+/* FORMS */
+input, textarea, select {
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
 
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            animation: zoomIn 0.5s ease forwards;
-            opacity: 0; /* Start hidden */
-        }
+button {
+    padding:12px;
+    background:#6a1b9a;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    width:100%;
+}
 
-        @keyframes zoomIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        footer {
-            background-color: #681f8f;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            animation: fadeIn 1s ease-in;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-
-            .mission-vision h2, .donation-form h2, .volunteer-form h2 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:30px;
+    background:#111827;
+    color:white;
+    margin-top:50px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>OPEN ARMS FOUNDATION</h1>
-        <nav>
-            <a href="#mission">Mission</a>
-            <a href="#vision">Vision</a>
-            <a href="#donate">Donate</a>
-            <a href="#impact">Impact</a>
-            <a href="#volunteer">Volunteer</a>
-        </nav>
-    </header>
 
-    <div class="container">
-        <section class="section mission-vision" id="mission">
-            <h2>Our Mission</h2>
-            <p>To provide essential resources and compassionate support to those in hardship. We aim to empower them to rebuild their lives with dignity.</p>
-            <h2>Our Vision</h2>
-            <p>A world where every person feels welcomed and valued, regardless of their circumstances. A community where open arms are always extended.</p>
-        </section>
+<!-- HEADER -->
+<header>
+    <h2>Open Arms Foundation</h2>
+    <nav>
+        <a href="#mission">Mission</a>
+        <a href="#impact">Impact</a>
+        <a href="#donate">Donate</a>
+        <a href="#volunteer">Volunteer</a>
+    </nav>
+</header>
 
-        <section class="section donation-form" id="donate">
-            <h2>Donate Now</h2>
-            <form>
-                <input type="text" placeholder="Your Name" aria-label="Your Name" required>
-                <input type="email" placeholder="Your Email" aria-label="Your Email" required>
-                <input type="number" placeholder="Amount (INR)" aria-label="Amount (INR)" required>
-                <textarea placeholder="Message (Optional)"></textarea>
-                <button type="submit">Donate</button>
-            </form>
-        </section>
+<!-- HERO -->
+<section class="hero">
+    <h1>Helping Hands, Changing Lives ❤️</h1>
+    <p>Food • Education • Shelter • Hope</p>
+    <button class="btn">Donate Now</button>
+</section>
 
-        <section class="section gallery" id="impact">
-            <h2>Our Impact</h2>
-            <img src="https://storage2.snappages.site/4VD6DQ/assets/images/5472091_1280x850_500.jpg" alt="Impact 1">
-            <img src="https://storage2.snappages.site/4VD6DQ/assets/images/5527315_1280x960_500.jpg" alt="Impact 2">
-            <img src="https://storage2.snappages.site/4VD6DQ/assets/images/6273699_6016x4000_500.JPG" alt="Impact 3">
-            <img src="https://th.bing.com/th/id/OIP.7RVDE4UrCQ2kV7DMZy_fiQHaD4?rs=1&pid=ImgDetMain" alt="Impact 4">
-            <img src="https://helplocal.in/blog/wp-content/uploads/2020/12/191286_1.jpg" alt="Impact 5"> <!-- Add more images -->
-            <img src="https://media.gettyimages.com/id/1498170916/photo/a-couple-is-taking-a-bag-of-food-at-the-food-and-clothes-bank.jpg?s=612x612&w=gi&k=20&c=OQXzpRYIt4_vr0b2tTz9Wsz8aCPi9FgUBwGSEeJaToM=" alt="Impact 6">
-            <img src="https://vakilsearch.com/blog/wp-content/uploads/2021/08/Types-Of-NGO-Registration-And-Its-Benefits-1.jpg" alt="Impact 7">
-            <img src="https://www.nest.ngo/images/banner3.jpg" alt="Impact 8">
-        </section>
+<!-- MISSION + VISION -->
 
-        <section class="section volunteer-form" id="volunteer">
-            <h2>Volunteer Registration</h2>
-            <form>
-                <input type="text" placeholder="Your Name" aria-label="Your Name" required>
-                <input type="email" placeholder="Your Email" aria-label="Your Email" required>
-                <input type="tel" placeholder="Phone Number" aria-label="Phone Number" required>
-                <textarea placeholder="Why do you want to volunteer?" required></textarea>
-                <button type="submit">Register</button>
-            </form>
-        </section>
-    </div>
+<!-- MISSION & VISION -->
+<section class="section">
 
-    <footer>
-        <p>&copy; 2025 Open Arms Foundation. All rights reserved.</p>
-    </footer>
+<div class="grid" style="margin-bottom:40px;">
+
+<div class="card" style="border-left:5px solid #6a1b9a;">
+<h2 style="color:#6a1b9a;">Our Mission</h2>
+<p>
+To provide essential resources and compassionate support to people in hardship,
+helping them rebuild their lives with dignity, stability, and hope.
+</p>
+</div>
+
+<div class="card" style="border-left:5px solid #8e24aa;">
+<h2 style="color:#8e24aa;">Our Vision</h2>
+<p>
+A world where every individual is valued, supported, and empowered — 
+regardless of their background or circumstances.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COUNTERS -->
+<section class="section counter">
+<div>
+<h2 id="c1">0</h2>
+<p>Lives Impacted</p>
+</div>
+
+<div>
+<h2 id="c2">0</h2>
+<p>Meals Served</p>
+</div>
+
+<div>
+<h2 id="c3">0</h2>
+<p>Volunteers</p>
+</div>
+</section>
+
+<!-- IMPACT (WITH YOUR IMAGES) -->
+<section class="section">
+<h2 style="text-align:center;margin-bottom:30px;">Our Impact</h2>
+
+<div class="grid">
+
+<img src="https://storage2.snappages.site/4VD6DQ/assets/images/5472091_1280x850_500.jpg">
+<img src="https://storage2.snappages.site/4VD6DQ/assets/images/5527315_1280x960_500.jpg">
+<img src="https://storage2.snappages.site/4VD6DQ/assets/images/6273699_6016x4000_500.JPG">
+<img src="https://th.bing.com/th/id/OIP.7RVDE4UrCQ2kV7DMZy_fiQHaD4">
+<img src="https://helplocal.in/blog/wp-content/uploads/2020/12/191286_1.jpg">
+<img src="https://media.gettyimages.com/id/1498170916/photo/a-couple-is-taking-a-bag-of-food-at-the-food-and-clothes-bank.jpg">
+<img src="https://www.nest.ngo/images/banner3.jpg">
+
+</div>
+</section>
+
+<!-- DONATION -->
+<section class="section" style="padding-top:40px; padding-bottom:80px;">
+
+<div class="card" style="text-align:center; max-width:700px; margin:auto;">
+
+<h2 style="margin-bottom:20px;">💜 Support Our Cause</h2>
+
+<p style="margin-bottom:25px; color:#6b7280;">
+Your contribution helps us provide food, education, and shelter to those in need.
+</p>
+
+<div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+<button onclick="donate(100)">₹100</button>
+<button onclick="donate(500)">₹500</button>
+<button onclick="donate(1000)">₹1000</button>
+</div>
+
+<p id="msg" style="margin-top:20px; font-weight:600;"></p>
+
+</div>
+
+</section>
+
+<!-- VOLUNTEER (IMPROVED) -->
+<section class="section" id="volunteer">
+<div class="card">
+<h2>Volunteer With Us</h2>
+
+<form onsubmit="event.preventDefault(); alert('Application Submitted ❤️')">
+
+<input placeholder="Full Name" required>
+<input placeholder="Email Address" required>
+<input placeholder="Phone Number" required>
+
+<select required>
+<option value="">Select Availability</option>
+<option>Weekdays</option>
+<option>Weekends</option>
+<option>Flexible</option>
+</select>
+
+<textarea placeholder="Why do you want to join us?" rows="4" required></textarea>
+
+<textarea placeholder="Skills (Teaching, Medical, Management, etc.)" rows="3"></textarea>
+
+<button type="submit">Submit Application</button>
+
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2025 Open Arms Foundation | Built with ❤️</p>
+</footer>
+
+<script>
+
+/* COUNTERS */
+function animate(id, end){
+let i=0;
+let el=document.getElementById(id);
+let interval=setInterval(()=>{
+i++;
+el.innerText=i;
+if(i>=end) clearInterval(interval);
+},10);
+}
+
+animate("c1",1200);
+animate("c2",5000);
+animate("c3",320);
+
+/* DONATION */
+function donate(amount){
+document.getElementById("msg").innerText =
+"Thank you for donating ₹" + amount + " ❤️";
+}
+
+</script>
+
 </body>
 </html>
