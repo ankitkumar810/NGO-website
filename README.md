@@ -33,9 +33,11 @@ This project is built as part of my learning journey to improve my frontend deve
 
 ## 🛠️ Tech Stack
 
-- HTML5  
-- CSS3  
-- JavaScript 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,css,js" />
+  </a>
+</p>
 
 ---
 
