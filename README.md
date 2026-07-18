@@ -72,7 +72,6 @@ I am continuously improving my skills and will keep upgrading this project with 
 ## 👨‍💻 Author
 
 **Ankit Kumar**  
-B.Tech CSE Student | Aspiring Full Stack Developer  
 
 ---
 
