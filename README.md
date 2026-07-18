@@ -6,7 +6,7 @@ This project is designed to simulate a real-world donation and volunteer platfor
 ---
 
 ## 🚀 Live Demo
-(Will be added after deployment, stay tuned)
+(Will be added after deployment, stay tuned!)
 
 ---
 
